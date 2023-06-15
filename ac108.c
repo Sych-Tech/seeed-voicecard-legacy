@@ -1332,8 +1332,7 @@ static struct snd_soc_codec_driver ac10x_soc_codec_driver = {
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(4,17,0)
 	.idle_bias_on 	= 1,
 	.use_pmdown_time 	= 1,
-	.endianness 	= 1,
-	.non_legacy_dai_naming 	= 1,
+	.endianness 	= 1
 #endif
 };
 

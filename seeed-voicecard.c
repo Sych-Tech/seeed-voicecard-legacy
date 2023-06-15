@@ -352,12 +352,6 @@ static int asoc_simple_init_dai_link_params(struct snd_soc_pcm_runtime *rtd)
 	struct snd_pcm_hardware hw;
 	int i, ret, stream;
 
-	/* Only codecs should have non_legacy_dai_naming set. */
-	for_each_rtd_components(rtd, i, component) {
-		if (!component->driver->non_legacy_dai_naming)
-			return 0;
-	}
-
 	/* Assumes the capabilities are the same for all supported streams */
 	for (stream = 0; stream < 2; stream++) {
 		ret = snd_soc_runtime_calc_hw(rtd, &hw, stream);
